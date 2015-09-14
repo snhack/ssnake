@@ -34,14 +34,26 @@ module circularSegment(radius, theta) {
 	}
 }
 
-module chamferedSquare(size, chamfer, center=false) {
-	hull() {
-		translate([0,center?0:chamfer,0])
-			square([size[0],size[1]-2*chamfer],center);
+module chamferedSquare(size, chamfer, center=false, shell=0) {
+	difference() {
+		hull() {
+			translate([0,center?0:chamfer,0])
+				square([size[0],size[1]-2*chamfer],center);
 
-		translate([center?0:chamfer,0,0])
-			square([size[0]-2*chamfer,size[1]],center);
+			translate([center?0:chamfer,0,0])
+				square([size[0]-2*chamfer,size[1]],center);
+		}
+
+		if (shell > 0)
+			hull() {
+				translate([center?0:shell,center?0:chamfer,0])
+					square([size[0] - 2*shell, size[1]-2*chamfer],center);
+
+				translate([center?0:chamfer,center?0:shell,0])
+					square([size[0]-2*chamfer, size[1] - 2*shell],center);
+			}
 	}
+
 }
 
 module roundedSquare(size, radius, center=false, shell=0) {
@@ -219,10 +231,10 @@ module allRoundedRect(size, radius, center=false) {
 }
 
 
-module chamferedCube(size, chamfer, center=false) {
+module chamferedCube(size, chamfer, center=false, shell=0) {
 	translate([0,0, center ? -size[2]/2 : 0])
 		linear_extrude(size[2])
-		chamferedSquare(size, chamfer, center=center);
+		chamferedSquare(size, chamfer, center=center, shell=shell);
 }
 
 
