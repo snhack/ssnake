@@ -245,10 +245,14 @@ module arrangeSegments(num, ang) {
     translate([0,i*90,0])
     segment2();
 
-// option 3
-// short body segments
-// larger head to accommodate driver board and NodeMCU
-// long-ish tail to accommodate battery - LIPO?
-translate([0,-60,0])
-    head3();
-arrangeSegments(13, 30);
+module snake3() {
+    // option 3
+    // short body segments
+    // larger head to accommodate driver board and NodeMCU
+    // long-ish tail to accommodate battery - LIPO?
+    translate([0,-60,0])
+        head3();
+    arrangeSegments(13, 30);
+}
+
+segment3();
