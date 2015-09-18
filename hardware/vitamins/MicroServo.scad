@@ -65,8 +65,26 @@ module MicroServo_BodySubVolume(tol=0.3) {
 	// subtraction volume, with optional fitting tolerance
 	// to be differenced away from something else
 
+    2tol = 2*tol;
+
+    // main body
 	translate([-tol, -tol, -tol])
-		cube([23.5 + 2*tol, 12.6 + 2*tol, 22.5]);
+		cube([23.5 + 2tol, 12.6 + 2*tol, 22.5]);
+
+    // body - mounting flange
+    translate([-4.65 - tol, -tol, 16.3-tol]){
+        cube([32.8 + 2tol, 12.6 + 2tol, 2 + 2tol]);
+    }
+
+    // body - top
+    translate([-tol,-tol,18.2-tol]) cube([23.5+2tol, 12.6 + 2tol, 4.4+2tol]);
+
+    // body very top
+    translate([6.3, 6.3, 22.5-tol]) cylinder(r=6.3 + tol, h=4.1 + 2tol,$fn=45);
+
+    // cable exit
+    translate([-5+eta, 12.6/2 - 2, -tol])
+        cube([5,4,4]);
 }
 
 

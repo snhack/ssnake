@@ -5,7 +5,7 @@
 
 // Coding-style
 // ------------
-// 
+//
 // Colors are global variables, and are therefore written in UpperCamelCase.
 //
 // Generic colors should use their normal descriptive name for the variable name.
@@ -35,11 +35,11 @@ PolycarbonateColor 			 	= [1,0.8,0.5,0.5];
 SiliconeColor 					= [1,0.8,0.8,0.8];
 WoodColor 						= "orange";
 
-PlasticColor 					= "orange";
+PlasticColor 					= "white";
 
 // Additional Plastic colours to differentiate sub-assemblies
-Level2PlasticColor				= [1, 0.5, 0];
-Level3PlasticColor 				= [1, 0.4, 0];
+Level2PlasticColor				= [0.9, 0.9, 0.9];
+Level3PlasticColor 				= [0.8, 0.8, 0.8];
 
 // Material Color aliases
 // For compatibility with 3rd party libraries

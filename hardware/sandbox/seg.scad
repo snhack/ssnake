@@ -92,7 +92,7 @@ module segment3() {
     wheelOR = 15/2;
 
     // joint servo
-    attach([[2,-4,26], [-1,0,0], -90,0,0], MicroServo_Con_Fixing1) {
+    attach([[2,-2,26], [-1,0,0], -90,0,0], MicroServo_Con_Fixing1) {
         MicroServo();
         attach(rollConnector(MicroServo_Con_Horn,90), ServoHorn_Con_Def) ServoHorn();
 
@@ -101,17 +101,6 @@ module segment3() {
             rotate([0,0,180])
             cube([40,1,1]);
     }
-    /*
-    attach([[-14,5,23], [0,0,-1], 0,0,0], MicroServo_Con_Fixing1) {
-        MicroServo();
-        attach(rollConnector(MicroServo_Con_Horn,0), ServoHorn_Con_Def) ServoHorn();
-
-        // push rod
-        translate([19,4,31])
-            rotate([0,0,270])
-            cube([40,1,1]);
-    }
-    */
 
     // wheel
     translate([0, d/2, wheelOR])

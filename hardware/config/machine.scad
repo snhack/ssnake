@@ -24,3 +24,15 @@ tw 				= ThickWall;
 
 
 // Global design parameters
+SegmentWidth = 40;
+SegmentDepth = 30;
+SegmentHeight = 40;
+SegmentGroundClearance = 3;
+
+SegmentHingeOffset = 10;  // offset in Y relative to segment body
+SegmentHingeHeight = SegmentHeight/2 - 4;  // height of centreline relative to base of body
+SegmentHingeThickness = 8;
+SegmentHingeOR = 8/2;
+
+SegmentWheelOR = 14/2;
+SegmentWheelWidth = 15;
